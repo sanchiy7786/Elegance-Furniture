@@ -29,7 +29,7 @@ Use **Add a module** to configure a module name, an optional description, and up
 2. Import that repository in Vercel. Use the default Vite settings, build command `npm run build`, and output directory `dist`.
 3. Add `VITE_GOOGLE_CLIENT_ID` and `VITE_GOOGLE_SHEET_ID` in Vercel project settings for **Production**. Add them for **Preview** only if preview deployments should access real data.
 4. In Google Cloud Console, add the exact production URL (and any permitted preview URLs) under the OAuth web client’s **Authorized JavaScript origins**. Origins have no path and must match protocol and host.
-5. Configure the OAuth consent screen for the intended user audience. If Google marks it as **Testing**, only listed test users can use it and refresh-token grants can expire; publish/configure the consent app appropriately before relying on it for regular business use.
+5. Configure the OAuth consent screen for the intended user audience. If Google marks it as **Testing**, only listed test users can use it; publish/configure the consent app appropriately before relying on it for regular business use.
 6. Deploy to Vercel, then open the production URL and test sign-in, module creation, record entry, archive/restore, and spreadsheet permissions with a non-owner Google account.
 
 `vercel.json` supplies SPA routing and baseline browser security headers. GitHub Actions runs a clean install, lint, dependency audit, and production build for pushes and pull requests. Use Node.js 20.19 or newer.
